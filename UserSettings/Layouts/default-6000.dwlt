@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 10}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 25
+  controlID: 17
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -378,7 +378,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Textures
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -388,16 +388,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Textures
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\markm\Documents\GitHub\Project
+  m_LastProjectPath: C:\Users\markm\Documents\GitHub\229d-3ppl-platformer
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 386d0000
-    m_LastClickedID: 27960
-    m_ExpandedIDs: 00000000386d00003a6d00003c6d00003e6d0000406d0000
+    scrollPos: {x: 0, y: 30}
+    m_SelectedIDs: 3e6d0000
+    m_LastClickedID: 27966
+    m_ExpandedIDs: 00000000186a00001a6a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -426,7 +426,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000386d00003a6d00003c6d00003e6d0000406d0000
+    m_ExpandedIDs: 00000000186a00001a6a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -454,8 +454,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c623000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -576,7 +576,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 2afbffff
+      m_ExpandedIDs: 48f7feffc805ffffce10ffff7843ffff0a4affffcc52ffff7c56fffff656ffff9e5effff2a5fffff3ed7fffff4f0ffff2afbffff1873000028730000b47900008c7a0000ee7a00005e7b0000e47b0000587c00006e7c0000b4080100c00801000a090100200901004a090100d6090100800a0100960a0100040b0100ac0b0100bc0b0100de0b0100be0c0100d41401005c150100bc1701004418010094190100241a0100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1153,9 +1153,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 18.429522, y: 23.234314, z: 18.634468}
+    m_Target: {x: -8.392439, y: 21.245054, z: 95.58901}
     speed: 2
-    m_Value: {x: 18.429522, y: 23.234314, z: 18.634468}
+    m_Value: {x: -8.392439, y: 21.245054, z: 95.58901}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1201,13 +1201,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.3172218, y: 0.17696904, z: -0.060385942, w: -0.92973536}
+    m_Target: {x: 0.034740757, y: 0.06173737, z: -0.002154755, w: 0.9974802}
     speed: 2
-    m_Value: {x: -0.31722176, y: 0.17696904, z: -0.060385942, w: -0.9297353}
+    m_Value: {x: -0.034740757, y: -0.061737366, z: 0.0021547547, w: -0.9974802}
   m_Size:
-    m_Target: 29.120083
+    m_Target: 3.4582329
     speed: 2
-    m_Value: 29.120083
+    m_Value: 3.4582329
   m_Ortho:
     m_Target: 0
     speed: 2
