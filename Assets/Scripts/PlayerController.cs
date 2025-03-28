@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
 
+    public float mass = 70.0f; // มวลของตัวละคร (kg)
+    public float force;       // แรงที่เกิดขึ้นจากสูตร F = ma
+
     public float friction = 0.9f;
     public float minSpeedThreshold = 0.1f;
 
@@ -55,6 +58,11 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 moveDirection.y = jumpSpeed;
+
+                // คำนวณแรงจากการกระโดด (F = m * a)
+                float jumpForce = mass * jumpSpeed;
+                Debug.Log($"[กระโดด] แรงที่เกิดขึ้น: {jumpForce} N");
+
                 animator.SetTrigger("isJumping");
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isIdling", false);
@@ -65,7 +73,6 @@ public class PlayerController : MonoBehaviour
             moveDirection = new Vector3(xDisplacement * speed, moveDirection.y, zDisplacement * speed);
         }
 
-        // เพิ่มแรงเสียดทาน
         if (controller.isGrounded)
         {
             moveDirection.x *= friction;
@@ -74,6 +81,12 @@ public class PlayerController : MonoBehaviour
             if (Mathf.Abs(moveDirection.x) < minSpeedThreshold) moveDirection.x = 0;
             if (Mathf.Abs(moveDirection.z) < minSpeedThreshold) moveDirection.z = 0;
         }
+
+        // คำนวณแรงจากการเคลื่อนที่ (F = m * a)
+        Vector3 acceleration = (moveDirection - Vector3.zero) / Time.deltaTime;
+        force = mass * acceleration.magnitude;
+
+        Debug.Log($"[เคลื่อนที่] แรงที่เกิดขึ้น: {force} N");
 
         moveDirection.y += gravity * Time.deltaTime;
 
@@ -123,6 +136,15 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isFalling", true);
         }
     }
-        }
-    
 
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Rigidbody body = hit.collider.attachedRigidbody;
+        if (body != null && !body.isKinematic)
+        {
+            Vector3 pushDirection = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
+            body.linearVelocity = pushDirection * force / body.mass;
+            Debug.Log($"[ชนวัตถุ] แรงปฏิกิริยาที่กระทำ: {force} N");
+        }
+    }
+}
