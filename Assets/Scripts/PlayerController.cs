@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
 
-    public float friction = 0.9f; // ค่าแรงเสียดทาน (0.0 - 1.0)
-    public float minSpeedThreshold = 0.1f; // ความเร็วต่ำสุดก่อนหยุด
+    public float friction = 0.9f;
+    public float minSpeedThreshold = 0.1f;
 
     private Vector3 moveDirection = Vector3.zero;
 
@@ -71,7 +71,6 @@ public class PlayerController : MonoBehaviour
             moveDirection.x *= friction;
             moveDirection.z *= friction;
 
-            // หยุดการเคลื่อนที่หากความเร็วต่ำเกินไป
             if (Mathf.Abs(moveDirection.x) < minSpeedThreshold) moveDirection.x = 0;
             if (Mathf.Abs(moveDirection.z) < minSpeedThreshold) moveDirection.z = 0;
         }
@@ -124,4 +123,6 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isFalling", true);
         }
     }
-}
+        }
+    
+
