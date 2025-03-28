@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 moveDirection.y = jumpSpeed;
-
+                // กฎข้อที่ 2 — กฎของแรง
                 // คำนวณแรงจากการกระโดด (F = m * a)
                 float jumpForce = mass * jumpSpeed;
                 Debug.Log($"[กระโดด] แรงที่เกิดขึ้น: {jumpForce} N");
@@ -75,6 +75,10 @@ public class PlayerController : MonoBehaviour
 
         if (controller.isGrounded)
         {
+            // กฎข้อที่ 1 — กฎของความเฉื่อย
+
+            // เพิ่มแรงเสียดทาน (Friction) เพื่อหยุดตัวละครเมื่อไม่มีแรงมากระทำ
+
             moveDirection.x *= friction;
             moveDirection.z *= friction;
 
@@ -136,7 +140,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isFalling", true);
         }
     }
-
+    // กฎข้อที่ 3 — กฎของแรงกิริยาและแรงปฏิกิริยา
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         Rigidbody body = hit.collider.attachedRigidbody;
