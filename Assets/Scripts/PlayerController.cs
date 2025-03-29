@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isGrounded", controller.isGrounded);
         if (isFalling)
             xDisplacement = zDisplacement = 0.0f;
-
+        //  Collision Detection 
         if (controller.isGrounded)
         {
             animator.SetBool("isFalling", false);
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
         {
             // กฎข้อที่ 1 — กฎของความเฉื่อย
 
-            // เพิ่มแรงเสียดทาน (Friction) เพื่อหยุดตัวละครเมื่อไม่มีแรงมากระทำ
+            // แรงเสียดทาน (Friction) 
 
             moveDirection.x *= friction;
             moveDirection.z *= friction;
@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isFalling", true);
         }
     }
-    // กฎข้อที่ 3 — กฎของแรงกิริยาและแรงปฏิกิริยา
+    // กฎข้อที่ 3 — กฎของแรงกิริยาและแรงปฏิกิริยา  // Collision 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         Rigidbody body = hit.collider.attachedRigidbody;
